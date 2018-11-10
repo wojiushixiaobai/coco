@@ -9,6 +9,9 @@ RUN set -ex \
     && yum -y install epel-release gcc git \
     && yum -y install python36 python36-devel \
     && git clone https://github.com/jumpserver/coco.git \
+    && cd coco \
+    && git checkout dev \
+    && git pull \
     && yum -y install $(cat /opt/coco/requirements/rpm_requirements.txt) \
     && python3.6 -m venv /opt/py3 \
     && source /opt/py3/bin/activate \
