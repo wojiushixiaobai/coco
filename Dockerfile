@@ -19,11 +19,9 @@ RUN set -ex \
     && rm -rf /var/cache/yum/* \
     && rm -rf ~/.cache/pip \
     && mkdir -p /opt/coco/keys \
-    && mkdir -p /opt/coco/logs \
-    && cp /opt/coco/conf_example.py /opt/coco/conf.py \
-    && sed -i "s/# CORE_HOST/CORE_HOST/g" `grep "# CORE_HOST" -rl /opt/coco/conf.py` \
-    && sed -i "s/# LOG_LEVEL = 'INFO'/LOG_LEVEL = 'ERROR'/g" `grep "# LOG_LEVEL = 'INFO'" -rl /opt/coco/conf.py`
+    && mkdir -p /opt/coco/logs
 
+COPY conf.py /opt/coco/conf.py
 COPY readme.txt /opt/readme.txt
 COPY entrypoint.sh /bin/entrypoint.sh
 RUN chmod +x /bin/entrypoint.sh
@@ -32,6 +30,7 @@ VOLUME /opt/coco/keys
 
 ENV NAME=coco \
     CORE_HOST=http://127.0.0.1:8080
+    BOOTSTRAP_TOKEN=nwv4RdXpM82LtSvmV
 
 EXPOSE 2222 5000
 ENTRYPOINT ["entrypoint.sh"]
