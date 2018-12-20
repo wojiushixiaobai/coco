@@ -1,4 +1,4 @@
-Coco 1.4.6
+Coco Version 1.4.6
 项目默认目录 /opt/coco/
 log 位置 /opt/coco/logs/
 
