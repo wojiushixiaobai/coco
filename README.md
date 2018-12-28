@@ -20,9 +20,8 @@ You need update config.py settings as you need, Be aware of:
 
 They are:
 
-    NAME:
     JUMPSERVER_URL:
-    SECRET_KEY:
+    BOOTSTRAP_TOKEN:
 
 Also some config you need kown:
     SSH_HOST:
