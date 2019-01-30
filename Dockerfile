@@ -15,15 +15,12 @@ RUN set -ex \
     && yum -y install $(cat /opt/coco/requirements/rpm_requirements.txt) \
     && python3.6 -m venv /opt/py3 \
     && source /opt/py3/bin/activate \
-    && pip install --upgrade pip setuptools \
-    && pip install -r /opt/coco/requirements/requirements.txt \
+    && pip install --upgrade pip setuptools -i https://mirrors.aliyun.com/pypi/simple/ \
+    && pip install -r /opt/coco/requirements/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ \
     && yum clean all \
     && rm -rf /var/cache/yum/* \
-    && rm -rf ~/.cache/pip \
-    && mkdir -p /opt/coco/keys \
-    && mkdir -p /opt/coco/logs
+    && rm -rf ~/.cache/pip
 
-COPY conf.py /opt/coco/conf.py
 COPY readme.txt /opt/readme.txt
 COPY entrypoint.sh /bin/entrypoint.sh
 RUN chmod +x /bin/entrypoint.sh
@@ -31,7 +28,7 @@ RUN chmod +x /bin/entrypoint.sh
 VOLUME /opt/coco/keys
 
 ENV CORE_HOST=http://127.0.0.1:8080 \
-    BOOTSTRAP_TOKEN=nwv4RdXpM82LtSvmV
+    BOOTSTRAP_TOKEN=KXOeyNgDeTdpeu9q
 
 EXPOSE 2222 5000
 ENTRYPOINT ["entrypoint.sh"]
