@@ -1,4 +1,4 @@
-Coco Version 1.4.7
+Coco Version 1.4.8
 项目默认目录 /opt/coco/
 log 位置 /opt/coco/data/logs/
 确保BOOTSTRAP_TOKEN与jumpserver/config.yml里面的一致
