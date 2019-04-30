@@ -11,7 +11,7 @@ RUN set -ex \
     && echo 'LANG="zh_CN.UTF-8"' > /etc/locale.conf \
     && yum -y install epel-release gcc git \
     && yum -y install python36 python36-devel \
-    && git clone https://github.com/jumpserver/coco.git \
+    && git clone --depth=1 https://github.com/jumpserver/coco.git \
     && yum -y install $(cat /opt/coco/requirements/rpm_requirements.txt) \
     && python3.6 -m venv /opt/py3 \
     && source /opt/py3/bin/activate \
