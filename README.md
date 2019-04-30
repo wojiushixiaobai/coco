@@ -2,9 +2,9 @@
 
 Jumpserver terminal is a sub app of Jumpserver.
 
-It's implement a ssh server and a web terminal server, 
+It's implement a ssh server and a web terminal server,
 
-User can connect them except jumpserver openssh server and connect.py 
+User can connect them except jumpserver openssh server and connect.py
 pre version.
 
 
@@ -14,13 +14,13 @@ pre version.
 
 ## Setting
 
-You need update config.py settings as you need, Be aware of: 
+You need update config.py settings as you need, Be aware of:
 
 *YOU MUST SET SOME CONFIG THAT CONFIG POINT*
 
 They are:
 
-    JUMPSERVER_URL:
+    CORE_HOST:
     BOOTSTRAP_TOKEN:
 
 Also some config you need kown:
@@ -35,8 +35,7 @@ Also some config you need kown:
 When your start ssh server, It will register with jumpserver api,
 
 Then you need login jumpserver with admin user, active it in <Terminal>
- 
- If all done, your can use your ssh tools connect it.
- 
-ssh user@host:port
 
+ If all done, your can use your ssh tools connect it.
+
+ssh user@host:port
