@@ -21,7 +21,6 @@ RUN set -ex \
     && rm -rf /var/cache/yum/* \
     && rm -rf ~/.cache/pip
 
-COPY readme.txt /opt/readme.txt
 COPY entrypoint.sh /bin/entrypoint.sh
 RUN chmod +x /bin/entrypoint.sh
 

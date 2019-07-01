@@ -13,5 +13,4 @@ if [ ! -f "/opt/coco/config.yml" ]; then
 fi
 
 source /opt/py3/bin/activate
-cd /opt/coco && ./cocod start -d
-tail -f /opt/readme.txt
+cd /opt/coco && ./cocod start
