@@ -15,8 +15,8 @@ RUN set -ex \
     && yum -y install $(cat /opt/coco/requirements/rpm_requirements.txt) \
     && python3.6 -m venv /opt/py3 \
     && source /opt/py3/bin/activate \
-    && pip install --upgrade pip setuptools -i https://mirrors.aliyun.com/pypi/simple/ \
-    && pip install -r /opt/coco/requirements/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ \
+    && pip install --upgrade pip setuptools \
+    && pip install -r /opt/coco/requirements/requirements.txt \
     && yum clean all \
     && rm -rf /var/cache/yum/* \
     && rm -rf ~/.cache/pip
